@@ -1,0 +1,30 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+bool checkParenthesis(string &s){
+    stack<char>st;
+   for(char ch:s){
+       if(ch=='('){
+           st.push(ch);
+   }
+   else if(ch==')'){
+       if(st.empty()){
+           return false;
+       }
+       st.pop();
+   }
+
+}
+   return st.empty();
+}
+int main(){
+string s={")("};
+if(checkParenthesis(s)){
+    cout<<"it is balanced"<<endl;
+}
+else
+{
+    cout<<"ït is not balanced";
+}
+
+}
